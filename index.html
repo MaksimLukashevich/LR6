@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">User Management</div>
+            <nav>
+                <ul>
+                    <li><a href="#users" class="nav-link" data-page="users">Пользователи</a></li>
+                    <li><a href="#users#todos" class="nav-link" data-page="todos">Задачи</a></li>
+                    <li><a href="#users#posts" class="nav-link" data-page="posts">Посты</a></li>
+                    <li><a href="#users#posts#comments" class="nav-link" data-page="comments">Комментарии</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <a href="#users">Пользователи</a>
+        </div>
+
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="Поиск...">
+            <button class="search-btn" id="searchBtn">Найти</button>
+        </div>
+
+        <div class="content" id="usersPage">
+            <h2>Пользователи</h2>
+            <button class="btn btn-primary" id="addUserBtn">Добавить пользователя</button>
+            <div class="add-user-form hidden" id="addUserForm">
+                <div class="form-group">
+                    <label for="userName">Имя</label>
+                    <input type="text" id="userName" placeholder="Введите имя">
+                </div>
+                <div class="form-group">
+                    <label for="userUsername">Имя пользователя</label>
+                    <input type="text" id="userUsername" placeholder="Введите имя пользователя">
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email</label>
+                    <input type="email" id="userEmail" placeholder="Введите email">
+                </div>
+                <div class="form-group">
+                    <label for="userPhone">Телефон</label>
+                    <input type="text" id="userPhone" placeholder="Введите телефон">
+                </div>
+                <div class="form-group">
+                    <label for="userWebsite">Веб-сайт</label>
+                    <input type="text" id="userWebsite" placeholder="Введите веб-сайт">
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-primary" id="saveUserBtn">Сохранить</button>
+                    <button class="btn" id="cancelUserBtn">Отмена</button>
+                </div>
+            </div>
+            <div id="usersList"></div>
+        </div>
+
+        <div class="content hidden" id="todosPage">
+            <h2>Задачи пользователей</h2>
+            <div id="todosList"></div>
+        </div>
+
+        <div class="content hidden" id="postsPage">
+            <h2>Посты пользователей</h2>
+            <div id="postsList"></div>
+        </div>
+
+        <div class="content hidden" id="commentsPage">
+            <h2>Комментарии к постам</h2>
+            <div id="commentsList"></div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="storage.js"></script>
+    <script src="render.js"></script>
+    <script src="search.js"></script>
+    <script src="navigation.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
